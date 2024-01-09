@@ -11,6 +11,7 @@
 extern char **environ;
 
 char **accept_input(void);
+int arr_size(char *string, char *delim);
 void disp_prmpt(void);
 void ex_logic(char *av);
 void _env(void);

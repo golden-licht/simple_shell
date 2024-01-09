@@ -9,10 +9,8 @@
 
 char **dirs_in_path()
 {
-	char *value = getenv("PATH");
-	char *val = _strdup(value);
-	char **arr = str_to_arr(val, ":");
+	char *val = getenv("PATH");
+	char **argv = str_to_arr(val, ":");
 
-	free(val);
-	return (arr);
+	return (argv);
 }

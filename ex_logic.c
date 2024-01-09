@@ -13,7 +13,6 @@ void ex_logic(char *av)
 	{
 		if (id == 0)
 		{
-
 			char **argv = NULL;
 			int stat;
 
@@ -23,10 +22,17 @@ void ex_logic(char *av)
 			stat = execve(argv[0], argv, environ);
 			if (stat == -1)
 			{
+				int i = 0;
+
+				while (argv[i])
+				{
+					free(argv[i]);
+					i++;
+				}
+				free(argv);
 				perror(av);
 			}
 		}
-
 		else
 		{
 			int wstatus;

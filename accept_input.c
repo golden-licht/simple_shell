@@ -8,20 +8,22 @@
 
 char **accept_input(void)
 {
-	char *cmnd = NULL;
 	char **argv = NULL;
+	char *cmnd = NULL;
 	size_t len_cmnd;
 
 	int stat = getline(&cmnd, &len_cmnd, stdin);
 
-	/* Handle EOF(Ctrl-D) */
+	/* Handle EOF(Ctrl-D) and exit command */
 	if (stat == -1 || _strcmp("exit\n", cmnd) == 0)
 	{
+		free(cmnd);
 		exit(3);
 	}
 
 	cmnd[_strlen(cmnd) - 1] = '\0';
 	argv = str_to_arr(cmnd, " ");
 	argv[0] = find_in_path(argv[0]);
+	free(cmnd);
 	return (argv);
 }

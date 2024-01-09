@@ -62,7 +62,6 @@ int _strlen(char *s)
 char *_strdup(char *s)
 {
 	char *str;
-	int i = 0;
 
 	if (s == NULL)
 		return (NULL);
@@ -70,8 +69,7 @@ char *_strdup(char *s)
 	if (str == NULL)
 		return (NULL);
 
-	for (i = 0; i <= _strlen(s); i++)
-		str[i] = s[i];
+	_strcpy(str, s);
 
 	return (str);
 
@@ -87,7 +85,7 @@ char *_strdup(char *s)
 
 char *_strcpy(char *dst, char *src)
 {
-	int i = 0;
+	int i;
 
 	for (i = 0; i <= _strlen(src); i++)
 		dst[i] = src[i];
@@ -102,10 +100,9 @@ char *_strcpy(char *dst, char *src)
  *
  * Return: Pointer to the concatenated string (dst).
  */
+
 char *_strcat(char *dst, char *src)
 {
-	int i = _strlen(dst) + 1;
-
-	_strcpy(&(dst[i]), src);
+	_strcpy(dst + _strlen(dst), src);
 	return (dst);
 }
