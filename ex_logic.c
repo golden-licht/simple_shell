@@ -2,9 +2,10 @@
 
 /**
  * ex_logic - Executes the main logic of a shell program, handling user input.
+ * @av: The first argument to main
  */
 
-void ex_logic(void)
+void ex_logic(char *av)
 {
 	pid_t id = fork();
 
@@ -22,8 +23,7 @@ void ex_logic(void)
 			stat = execve(argv[0], argv, environ);
 			if (stat == -1)
 			{
-				print("Error: No such file or directory");
-				print("\n");
+				perror(av);
 			}
 		}
 

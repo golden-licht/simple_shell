@@ -12,7 +12,7 @@ extern char **environ;
 
 char **accept_input(void);
 void disp_prmpt(void);
-void ex_logic(void);
+void ex_logic(char *av);
 void _env(void);
 char **dirs_in_path(void);
 char **str_to_arr(char *string, char *delim);
