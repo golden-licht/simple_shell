@@ -32,7 +32,7 @@ void ex_logic(void)
 			int wstatus;
 
 			wait(&wstatus);
-			if (WEXITSTATUS(wstatus) == 98)
+			if (WEXITSTATUS(wstatus) == 3)
 			{
 				exit(0);
 			}
