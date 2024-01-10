@@ -43,7 +43,7 @@ int _strlen(char *s)
 	int i;
 
 	if (s == NULL)
-		return (-1);
+		return (0);
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -87,6 +87,8 @@ char *_strcpy(char *dst, char *src)
 {
 	int i;
 
+	if (src == NULL)
+		return NULL;
 	for (i = 0; i <= _strlen(src); i++)
 		dst[i] = src[i];
 

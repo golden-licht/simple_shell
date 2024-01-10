@@ -16,8 +16,11 @@ void ex_logic(char *av)
 			char **argv = NULL;
 			int stat;
 
-			disp_prmpt();
+			/*disp_prmpt();*/
 			argv = accept_input();
+
+			if (argv == NULL)
+				exit(-1);
 
 			stat = execve(argv[0], argv, environ);
 			if (stat == -1)

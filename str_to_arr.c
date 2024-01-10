@@ -66,7 +66,7 @@ char **str_to_arr(char *string, char *delim)
 	{
 		int j;
 
-		argv[i] = strdup(temp);
+		argv[i] = _strdup(temp);
 		if (argv[i] == NULL)
 		{
 			for (j = 0; j < i; j++)
