@@ -18,10 +18,8 @@ void ex_logic(char *av)
 
 			/*disp_prmpt();*/
 			argv = accept_input();
-
 			if (argv == NULL)
 				exit(-1);
-
 			stat = execve(argv[0], argv, environ);
 			if (stat == -1)
 			{

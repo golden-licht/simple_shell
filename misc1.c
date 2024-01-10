@@ -72,7 +72,6 @@ char *_strdup(char *s)
 	_strcpy(str, s);
 
 	return (str);
-
 }
 
 /**
@@ -88,7 +87,7 @@ char *_strcpy(char *dst, char *src)
 	int i;
 
 	if (src == NULL)
-		return NULL;
+		return (NULL);
 	for (i = 0; i <= _strlen(src); i++)
 		dst[i] = src[i];
 

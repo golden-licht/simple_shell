@@ -39,8 +39,6 @@ int arr_size(char *string, char *delim)
  * Return: Pointer to the array of strings.
  */
 
-
-
 char **str_to_arr(char *string, char *delim)
 {
 	char **argv = NULL;

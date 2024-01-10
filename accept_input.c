@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * is_spaces: Checks if a string, s is only made of
+ * is_spaces - Checks if a string, s is only made of
  * spaces or has any characters other than spaces
  * @s: The string
- * 
+ *
  * Return: 0, if spaces, 1 otherwise
 */
 
@@ -15,7 +15,7 @@ int is_spaces(char *s)
 	if (s == NULL)
 		return (0);
 
-	while(s[i] == ' ' || s[i] == '\t')
+	while (s[i] == ' ' || s[i] == '\t')
 		i++;
 
 	if (s[i] == '\0')
@@ -45,13 +45,10 @@ char **accept_input(void)
 		free(cmnd);
 		exit(3);
 	}
-
-	while(cmnd[j] == ' ')
+	while (cmnd[j] == ' ')
 		j++;
-
 	cmnd2 = _strdup(cmnd + j);
 	free(cmnd);
-
 
 	cmnd2[_strlen(cmnd2) - 1] = '\0';
 	if (_strcmp(cmnd2, "") != 0)
